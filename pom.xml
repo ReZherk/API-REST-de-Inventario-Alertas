@@ -1,66 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.ReZherk</groupId>
-	<artifactId>alertas-inventario</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>alertas-inventario</name>
-	<description>This project is an application developed with Spring Boot and Java 8 that allows for inventory management, minimum stock control, and alert generation when products reach critical levels.</description>
-	<url/>
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>https://opensource.org/licenses/MIT</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<id>ReZherk</id>
-			<name>Patrick Alexander Alcántara Sedano</name>
-			<email>patrickalcantaraingsistema@gmail.com</email>
-		</developer>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.ReZherk</groupId>
+    <artifactId>alertas-inventario</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>alertas-inventario</name>
+    <description>This project is an application developed with Spring Boot and Java 8 that allows for inventory
+        management, minimum stock control, and alert generation when products reach critical levels.
+    </description>
+    <url/>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>ReZherk</id>
+            <name>Patrick Alexander Alcántara Sedano</name>
+            <email>patrickalcantaraingsistema@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+        <!-- Starter para construir aplicaciones web con Spring Boot.
+     Incluye Spring MVC, Tomcat embebido, Jackson para JSON,
+     y soporte para controladores REST y páginas Thymeleaf. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Starter para validación de datos en Spring Boot.
+     Incluye Hibernate Validator (implementación de Bean Validation),
+     soporte para anotaciones como @NotNull, @Size, @Email, etc.,
+     y manejo automático de errores en controladores REST. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
 
 
-	</build>
+        <!-- Dependencia para integrar documentación OpenAPI automática en proyectos Spring Boot con WebMVC.
+     Incluye interfaz Swagger UI para visualizar y probar endpoints REST desde el navegador.
+     Ideal para proyectos con arquitectura profesional y presentación clara de APIs. -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.15</version>
+        </dependency>
 
+        <!-- Spring Data JPA para persistencia con entidades -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.7.9</version> <!-- Compatible con Java 8 y JDBC 4.2 -->
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+
+    </build>
 
 
 </project>
