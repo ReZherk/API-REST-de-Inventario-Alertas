@@ -10,12 +10,11 @@ import java.time.LocalDateTime;
 
 
 /**
- * Configuración de la tabla "products" en la base de datos.
- * Se define un índice único sobre la columna "sku" para mejorar el rendimiento en búsquedas
- * y garantizar que no se repitan códigos de producto.
+ * Configuración de la tabla "products" en la base de datos(Actualemente no lo uso por que se migro a flyway).
+   Se define un índice único sobre la columna "sku" para mejorar el rendimiento en búsquedas
+   y garantizar que no se repitan códigos de producto.
  * El índice se llama "idx_products_sku" y se aplica directamente al esquema generado por JPA.
  */
-
 @Entity
 @Table(name = "products", indexes = {
         @Index(name = "idx_products_sku", columnList = "sku", unique = true)

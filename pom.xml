@@ -108,6 +108,23 @@
             <version>1.18.30</version> <!-- Compatible con Java 8 -->
             <scope>provided</scope>
         </dependency>
+
+
+        <!-- Flyway: herramienta de migración de base de datos que permite versionar y aplicar cambios SQL de forma controlada.
+        Ideal para entornos profesionales donde se requiere trazabilidad, auditoría y despliegues seguros.
+        Ejecuta automáticamente los scripts ubicados en src/main/resources/db/migration al iniciar la aplicación. -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <!-- Flyway MySQL: módulo adicional necesario para habilitar compatibilidad con MariaDB.
+        Aunque Flyway core gestiona migraciones, no reconoce MariaDB 10.4 sin este complemento.
+        Este artefacto permite que Flyway trate MariaDB como una variante de MySQL y ejecute correctamente los scripts SQL. -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+        </dependency>
     </dependencies>
 
 
