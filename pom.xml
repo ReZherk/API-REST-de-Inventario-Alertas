@@ -99,6 +99,15 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.15</version>
         </dependency>
+
+
+        <!-- Lombok: Generación automática de getters, setters, toString, etc. -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version> <!-- Compatible con Java 8 -->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 
