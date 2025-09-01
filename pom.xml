@@ -90,6 +90,15 @@
             <artifactId>mariadb-java-client</artifactId>
             <version>2.7.9</version> <!-- Compatible con Java 8 y JDBC 4.2 -->
         </dependency>
+
+        <!-- Documentación Swagger habilitada con SpringDoc OpenAPI v1.6.15
+     Compatible con Java 8 y Spring Boot 2.x
+     Acceso a Swagger UI: http://localhost:8080/swagger-ui.html -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.15</version>
+        </dependency>
     </dependencies>
 
 
