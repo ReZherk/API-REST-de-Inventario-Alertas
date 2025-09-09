@@ -43,31 +43,46 @@ public class ProductServiceImpl implements ProductService {
     public Product update(Long id, Product data) {
 
         // orElseThrow lanza una excepción si el Optional está vacío.
+        // EntityNotFoundException indica que no se encontró la entidad solicitada.
         Product p = repo.findById(id).orElseThrow(() -> new EntityNotFoundException("Producto no encontrado"));
         p.setName(data.getName());
         p.setMinStock(data.getMinStock());
         p.setCurrentStock(data.getCurrentStock());
         p.setActive(data.getActive());
         return p;
+
+        // Aunque no se llama a save(), el objeto 'p' está gestionado por JPA.
+        // Al modificar sus atributos, JPA detecta los cambios (dirty checking).
+        // Al finalizar la transacción, se genera automáticamente un UPDATE en la base de datos.
     }
 
     @Override
     public void delete(Long id) {
-
+        repo.deleteById(id);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Product> findById(Long id) {
-        return Optional.empty();
+        return repo.findById(id);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Product> findBySku(String sku) {
-        return Optional.empty();
+        return repo.findBySku(sku);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Product> findAll() {
-        return Collections.emptyList();
+        return repo.findAll();
     }
 }
+
+
+// Metodo derivado de nombre: Spring genera la consulta automáticamente.
+// 'findBy' indica que es una búsqueda.
+// El nombre del campo debe coincidir con el atributo de la entidad.
+// Operadores como 'GreaterThan', 'Containing', 'Between' permiten condiciones.
+// 'And', 'Or' combinan múltiples criterios.
