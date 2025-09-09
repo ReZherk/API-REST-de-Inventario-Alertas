@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ProductService {
     Product create(Product p);
 
-    Product update(Long id, Product p);
+    Product update(Long id, Product data);
 
     void delete(Long id);
 
