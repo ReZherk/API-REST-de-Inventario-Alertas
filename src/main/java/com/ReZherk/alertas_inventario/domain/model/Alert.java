@@ -38,11 +38,11 @@ public class Alert {
 
 
     @Column(nullable = false)
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     @PrePersist
     public void prePersist() {
-        createAt = LocalDateTime.now();
+        createdAt = LocalDateTime.now();
     }
 
 }

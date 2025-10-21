@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 public class ProductController {
 
     private final ProductService service;
+    // Para timestamps legibles en logs, auditorías o respuestas JSON
     private final DateTimeFormatter fmt = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
     public ProductController(ProductService service) {
