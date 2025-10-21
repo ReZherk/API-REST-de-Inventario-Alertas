@@ -13,3 +13,8 @@ public class SchedulingConfig {
  * Esta clase activa el soporte de @Scheduled, permitiendo ejecutar métodos automáticamente
  * en intervalos definidos.
  */
+
+//@EnableScheduling
+// Habilita el soporte para tareas programadas en Spring mediante anotaciones como @Scheduled.
+// Esta anotación debe colocarse en una clase de configuración (por ejemplo, la clase principal con @SpringBootApplication).
+// Proviene del paquete org.springframework.scheduling.annotation y activa el procesamiento interno de Spring para ejecutar métodos programados.

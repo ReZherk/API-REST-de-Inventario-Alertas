@@ -17,7 +17,7 @@ public class ProductUpdateDTO {
 
     @NotNull(message = "Debe estar lleno el stock actual")
     @Min(0)
-    public Integer currentSock;
+    public Integer currentStock;
 
     public Boolean active = true;
 }
