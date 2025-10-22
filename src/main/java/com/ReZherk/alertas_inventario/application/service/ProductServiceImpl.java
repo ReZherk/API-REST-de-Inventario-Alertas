@@ -3,6 +3,7 @@ package com.ReZherk.alertas_inventario.application.service;
 import com.ReZherk.alertas_inventario.domain.model.Product;
 import com.ReZherk.alertas_inventario.domain.repository.ProductRepository;
 import com.ReZherk.alertas_inventario.domain.service.ProductService;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,7 +58,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void delete(Long id) {
-        repo.deleteById(id);
+        try {
+            repo.deleteById(id);
+        } catch (EmptyResultDataAccessException ex) {
+            throw new EntityNotFoundException("Producto con ID " + id + " no existe");
+        }
     }
 
     @Override

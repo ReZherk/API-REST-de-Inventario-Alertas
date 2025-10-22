@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -52,6 +55,10 @@ public class Product {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    // NUEVA RELACIÓN: Elimina alertas automáticamente al eliminar producto
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Alert> alerts = new ArrayList<>();
 
 
     // @PrePersist indica que este método se ejecutará automáticamente antes de insertar la entidad en la base de datos.
