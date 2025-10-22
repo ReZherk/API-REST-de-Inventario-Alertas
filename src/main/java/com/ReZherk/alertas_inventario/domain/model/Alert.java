@@ -22,9 +22,14 @@ public class Alert {
     private Long id;
 
     //Agregar nombre explícito de la columna FK
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false,
-            foreignKey = @ForeignKey(name = "fk_alerts_product"))
+    @ManyToOne(
+            optional = false,                  // Toda alert DEBE tener un producto (no null)
+            fetch = FetchType.LAZY             // Carga el producto solo cuando se accede (optimización)
+    )
+    @JoinColumn(
+            name = "product_id",               // Nombre de la columna FK en tabla alerts
+            nullable = false                   // La columna product_id no puede ser null
+    )
     private Product product;
 
 

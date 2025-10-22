@@ -57,7 +57,11 @@ public class Product {
     private LocalDateTime updatedAt;
 
     // NUEVA RELACIÓN: Elimina alertas automáticamente al eliminar producto
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(
+            mappedBy = "product",              // Busca el atributo en Alert que debe tener  "product" quien tiene la FK
+            cascade = CascadeType.ALL,         // Propaga todas las operaciones (guardar, borrar, etc.)
+            orphanRemoval = true               // Borra alertas huérfanas sin producto
+    )
     private List<Alert> alerts = new ArrayList<>();
 
 
